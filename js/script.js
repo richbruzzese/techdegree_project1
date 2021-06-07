@@ -8,22 +8,22 @@ project 1 - A Random Quote Generator
   // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
 
 /*** 
- * `quotes` array 
+Array of objects to store quotes. Properties to store quote, source, along with  citation and year(where applicable)
 ***/
 let quotes=[{
   quote:'The journey of a thousand miles begins with one step.',
   source:'Lao Tzu',
-  cited:'Dao De Jing',
+  citation:'Dao De Jing',
 },
 {
   quote:'That which does not kill us makes us stronger',
   source:'Friedrich Nietzsche',
-  cited:'Twilight of the Idols',
+  citation:'Twilight of the Idols',
   year:'1888'
 },{
   quote:'Life is what happens when you’re busy making other plans.',
   source:'John Lennon',
-  cited:'Beautiful Boy',
+  citation:'Beautiful Boy',
   year: 1981
 },{
   quote:'The greatest glory in living lies not in never falling, but in rising every time we fall.',
@@ -83,24 +83,29 @@ let quotes=[{
 },
 {
   quote:'When you look at someone through rose-colored glasses, all the red flags just look like flags',
-  source:'Lisa Kudrow',
+  source:'Wanda Pierce',
   citation: 'Bojack Horseman',
   year: 2015
 },
 
 ]
-console.log(quotes)
+
 
 /***
  * `getRandomQuote` function
 ***/
+function getRandomQuote (){
+  let randomNumber = Math.floor(Math.random() * quotes.length )
+  let randomQuote = quotes[randomNumber]
+  return randomQuote
+}
+console.log(getRandomQuote());
 
 
 
 /***
  * `printQuote` function
 ***/
-
 
 
 /***
