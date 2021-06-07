@@ -1,2 +1,2 @@
-# techdegree_project1
- initial project for tech degree
+# Techdegree Project 1
+ initial project for tech degree. Creating a random quote generator
