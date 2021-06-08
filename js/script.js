@@ -8,7 +8,8 @@ project 1 - A Random Quote Generator
   // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
 
 /*** 
-Array of objects to store quotes. Properties to store quote, source, along with  citation and year(where applicable)
+Array of objects to store quotes. Properties to store quote, source.
+Object may also store citation,year and link(where applicable)
 ***/
 
 let quotes=[
@@ -97,9 +98,9 @@ let quotes=[
 ]
 
 /***
- Function will generate a random number based on length of the array.
- After generating the number assigning it to the index position and 
- returning the quote from that index value
+ getRandomQuote function will generate a random number based on length of the array.
+ After generating the number and assigning it to the index position function will 
+ return the quote from that index value
 ***/
 
 function getRandomQuote (){
@@ -109,7 +110,7 @@ function getRandomQuote (){
 }
 
 /***
- Function will call the getRandomQuote function, create an html string and break
+ printQuote function will call the getRandomQuote function, create an html string and break
  out the properties to specific parts of the page.
  
  BG color changed passed each time function called
@@ -125,8 +126,8 @@ function printQuote( ){
       html += `<span class="citation">` + randQuote.citation + `</span>`;
         if(randQuote.year){
           html += `<span class="year">` + randQuote.year + `</span>`;
-        if(randQuote.link){
-          html += `<p class="source">` + randQuote.link + `</p>`;
+          if(randQuote.link){
+            html += `<p class="source">` + randQuote.link + `</p>`;
         }
         }
     }
@@ -135,6 +136,9 @@ function printQuote( ){
   document.body.style.background= color; 
   return document.getElementById('quote-box').innerHTML = html;
 }
+/*** 
+ Set interval method will call the printQuote function after 10 seconds
+ ***/
 setInterval(printQuote, 10000)
 
 /***
