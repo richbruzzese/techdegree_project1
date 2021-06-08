@@ -114,6 +114,13 @@ h1 {
   content: ", ";
   font-style: normal;
 }
+.link{
+  font-style:italic;
+  font-size:smaller
+}
+  .link:before{
+    content:" | "
+  }
 
 @media (min-width: 768px) {
   body {

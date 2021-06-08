@@ -64,7 +64,7 @@ let quotes=[
     source:'John Green',
     citation: 'The Fault in Our Stars',
     year: 2012,
-    link: 'https://www.amazon.com/Fault-Our-Stars-John-Green/dp/014242417X'
+    link: `<a href="https://www.amazon.com/Fault-Our-Stars-John-Green/dp/014242417X">Support the Author</a>`
   },
   {
     quote:'Grief doesn\'t change you, it reveals you',
@@ -91,7 +91,7 @@ let quotes=[
     source:'Wanda Pierce',
     citation: 'Bojack Horseman',
     year: 2015,
-    link:'https://www.netflix.com/title/70300800'
+    link:`<a href="https://www.netflix.com/title/70300800"> Support the Author</a>`
   }
 
 ]
@@ -111,22 +111,31 @@ function getRandomQuote (){
 /***
  Function will call the getRandomQuote function, create an html string and break
  out the properties to specific parts of the page.
+ 
+ BG color changed passed each time function called
+ Formula for color change sourced from 'https://www.paulirish.com/2009/random-hex-color-code-snippets/'
 ***/
 
 function printQuote( ){
   let randQuote=getRandomQuote();
+  let color = '#'+Math.floor(Math.random()*16777215).toString(16);
   let html = `<p class= "quote">` + randQuote.quote + '</p>' 
   + `<p class= "source">` + randQuote.source  
     if(randQuote.citation){
       html += `<span class="citation">` + randQuote.citation + `</span>`;
         if(randQuote.year){
           html += `<span class="year">` + randQuote.year + `</span>`;
+        if(randQuote.link){
+          html += `<p class="source">` + randQuote.link + `</p>`;
+        }
         }
     }
 
   html += `</p>`;
+  document.body.style.background= color; 
   return document.getElementById('quote-box').innerHTML = html;
 }
+setInterval(printQuote, 10000)
 
 /***
  * click event listener for the print quote button
