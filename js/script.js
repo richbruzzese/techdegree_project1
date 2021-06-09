@@ -12,7 +12,7 @@ Array of objects to store quotes. Properties to store quote, source.
 Object may also store citation,year and link(where applicable)
 ***/
 
-let quotes=[
+const quotes=[
     {
     quote:'The journey of a thousand miles begins with one step.',
     source:'Lao Tzu',
